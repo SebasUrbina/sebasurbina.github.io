@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: "sebaur"
+  site-url: https://sebasurbina.github.io/
+  search: 
+    location: navbar
+    type: overlay
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/sebasurbina
+      - icon: twitter
+        href: https://twitter.com/seba__urbina
+format:
+  html:
+    theme: lux
+    css: styles.css
+
+
+

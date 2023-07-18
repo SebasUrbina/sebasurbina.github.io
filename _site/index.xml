@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>sebaur</title>
+<link>https://sebasurbina.github.io/index.html</link>
+<atom:link href="https://sebasurbina.github.io/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.3.433</generator>
+<lastBuildDate>Mon, 17 Jul 2023 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Post With Code</title>
+  <dc:creator>Harlow Malloc</dc:creator>
+  <link>https://sebasurbina.github.io/posts/post-with-code/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This is a post with executable code.</p>
+
+
+
+ ]]></description>
+  <category>news</category>
+  <category>code</category>
+  <category>analysis</category>
+  <guid>https://sebasurbina.github.io/posts/post-with-code/index.html</guid>
+  <pubDate>Mon, 17 Jul 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://sebasurbina.github.io/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Bienvenid@ a mi Blog</title>
+  <dc:creator>Sebastián Urbina</dc:creator>
+  <link>https://sebasurbina.github.io/posts/welcome/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Este es mi primer post en un Blog de Quarto. Bienvenido 😀</p>
+<p><img src="https://sebasurbina.github.io/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
+<!-- Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts. -->
+
+
+
+ ]]></description>
+  <category>Noticias</category>
+  <guid>https://sebasurbina.github.io/posts/welcome/index.html</guid>
+  <pubDate>Fri, 14 Jul 2023 04:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
