@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "sebaur",
+    "section": "",
+    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nJul 17, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nBienvenid@ a mi Blog\n\n\n\n\n\n\n\nNoticias\n\n\n\n\n\n\n\n\n\n\n\nJul 14, 2023\n\n\nSebastián Urbina\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Soy Sebastián Urbina, estudiante de Ingeniería Civil Industrial & Magister en Ciencia de Datos. Bienvenido a mi mundo 🙂"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "Education",
+    "text": "Education\nUniversidad de Chile | Santiago, Chile Ingeniería Civil Industrial | 2018 - 2023\nMagister en Ciencia de Datos | 2023 - 2023"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About",
+    "section": "Experience",
+    "text": "Experience\nEntel | Data Scientist | Ago 2023 - present"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Bienvenid@ a mi Blog",
+    "section": "",
+    "text": "Este es mi primer post en un Blog de Quarto. Bienvenido 😀"
+  }
+]
