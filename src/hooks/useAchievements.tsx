@@ -14,7 +14,10 @@ export const useAchievements = () => {
 
   // Agrupar logros por año usando la utilidad genérica
   const achievementsByYear: AchievementsByYear = useMemo(() => {
-    return groupBy(achievements, (achievement) => achievement.year);
+    return groupBy(
+      achievements,
+      (achievement: Achievement) => achievement.year
+    );
   }, [achievements]);
 
   // Obtener los años ordenados de forma descendente usando la utilidad genérica
@@ -24,11 +27,14 @@ export const useAchievements = () => {
 
   // Funcionalidad adicional: contar logros por tipo de icono
   const countByIcon = useMemo(() => {
-    return achievements.reduce((acc: Record<IconKey, number>, achievement) => {
-      const { icon } = achievement;
-      acc[icon] = (acc[icon] || 0) + 1;
-      return acc;
-    }, {} as Record<IconKey, number>);
+    return achievements.reduce(
+      (acc: Record<IconKey, number>, achievement: Achievement) => {
+        const { icon } = achievement;
+        acc[icon] = (acc[icon] || 0) + 1;
+        return acc;
+      },
+      {} as Record<IconKey, number>
+    );
   }, [achievements]);
 
   return {
