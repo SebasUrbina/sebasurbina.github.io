@@ -1,7 +1,9 @@
+import { IconKey } from "../utils/iconMapper";
+
 export interface Achievement {
   id: string;
   year: number;
-  icon: "code" | "family" | "blog" | "github" | "stats" | "portfolio" | string;
+  icon: IconKey;
   content: React.ReactNode;
   link?: {
     text: string;

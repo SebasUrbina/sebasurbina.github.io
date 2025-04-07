@@ -40,8 +40,7 @@ const Home: React.FC = () => {
         className="text-lg mb-6 theme-transition"
         style={{ color: "var(--color-text-secondary)" }}
       >
-        Soy un desarrollador apasionado por la tecnología y el aprendizaje
-        continuo.
+        en construcción...
       </p>
     </div>
   );
@@ -60,7 +59,7 @@ const About: React.FC = () => {
         className="text-lg mb-6 theme-transition"
         style={{ color: "var(--color-text-secondary)" }}
       >
-        Aquí irá información sobre ti y tu experiencia.
+        en construcción...
       </p>
     </div>
   );

@@ -1,107 +1,41 @@
 import { useMemo } from "react";
 import { Achievement, AchievementsByYear } from "../types/Achievement";
-import { Link } from "react-router-dom";
+import { achievementsData } from "../content/achievements/data";
+import { groupBy, getSortedKeys } from "../utils/contentProcessor";
+import { IconKey } from "../utils/iconMapper";
 
+/**
+ * Hook para gestionar los logros, consumiendo los datos y procesándolos para su visualización
+ * Este hook separa la lógica de procesamiento de los datos estáticos
+ */
 export const useAchievements = () => {
-  // Definir los logros de forma estática, pero podrían venir de una API
-  const achievements: Achievement[] = useMemo(
-    () => [
-      {
-        id: "1",
-        year: 2024,
-        icon: "code",
-        content: (
-          <span>
-            Learnt{" "}
-            <Link
-              to="https://www.typescriptlang.org/"
-              style={{ color: "var(--color-accent)" }}
-            >
-              Typescript
-            </Link>{" "}
-            and{" "}
-            <Link
-              to="https://nextjs.org/"
-              style={{ color: "var(--color-accent)" }}
-            >
-              Next.js
-            </Link>
-          </span>
-        ),
-      },
-      {
-        id: "2",
-        year: 2021,
-        icon: "family",
-        content: <span>Testing ❤️</span>,
-      },
-      {
-        id: "3",
-        year: 2021,
-        icon: "blog",
-        content: <span>Testing</span>,
-        link: {
-          text: "Blog",
-          url: "/blog",
-        },
-      },
-      {
-        id: "4",
-        year: 2021,
-        icon: "github",
-        content: <span>Testing</span>,
-        link: {
-          text: "20+ open-source repositories",
-          url: "https://github.com/sebasurbina",
-        },
-      },
-      {
-        id: "5",
-        year: 2021,
-        icon: "stats",
-        content: <span>Testing</span>,
-        link: {
-          text: "Dev.to",
-          url: "https://dev.to/",
-        },
-      },
-      {
-        id: "6",
-        year: 2021,
-        icon: "portfolio",
-        content: <span>Testing</span>,
-        link: {
-          text: "source on Github",
-          url: "https://github.com/sebasurbina/portfolio",
-        },
-      },
-      // Puedes agregar más logros en diferentes años
-    ],
-    []
-  );
+  // Cargar los logros desde la fuente de datos
+  const achievements: Achievement[] = useMemo(() => achievementsData, []);
 
-  // Agrupar logros por año
+  // Agrupar logros por año usando la utilidad genérica
   const achievementsByYear: AchievementsByYear = useMemo(() => {
-    return achievements.reduce((acc: AchievementsByYear, achievement) => {
-      if (!acc[achievement.year]) {
-        acc[achievement.year] = [];
-      }
-      acc[achievement.year].push(achievement);
-      return acc;
-    }, {});
+    return groupBy(achievements, (achievement) => achievement.year);
   }, [achievements]);
 
-  // Obtener los años ordenados de forma descendente
+  // Obtener los años ordenados de forma descendente usando la utilidad genérica
   const years = useMemo(() => {
-    return Object.keys(achievementsByYear)
-      .map(Number)
-      .sort((a, b) => b - a);
+    return getSortedKeys(achievementsByYear);
   }, [achievementsByYear]);
+
+  // Funcionalidad adicional: contar logros por tipo de icono
+  const countByIcon = useMemo(() => {
+    return achievements.reduce((acc: Record<IconKey, number>, achievement) => {
+      const { icon } = achievement;
+      acc[icon] = (acc[icon] || 0) + 1;
+      return acc;
+    }, {} as Record<IconKey, number>);
+  }, [achievements]);
 
   return {
     achievements,
     achievementsByYear,
     years,
+    countByIcon,
   };
 };
 
