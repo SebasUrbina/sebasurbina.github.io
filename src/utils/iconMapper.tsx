@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { SiCoursera } from "react-icons/si";
 import { IconType } from "react-icons";
-
+import { FaAws } from "react-icons/fa";
 // Definir el tipo de iconos válidos
 export type IconKey =
   | "code"
@@ -20,6 +20,7 @@ export type IconKey =
   | "portfolio"
   | "education"
   | "coursera"
+  | "aws"
   | string;
 
 // Mapper para convertir strings a componentes de react-icons
@@ -32,6 +33,7 @@ export const iconMapper: Record<string, IconType> = {
   portfolio: FaBriefcase,
   education: FaGraduationCap,
   coursera: SiCoursera,
+  aws: FaAws,
 };
 
 // Función para obtener el componente de icono a partir de la clave
