@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 node_modules/
+*legacy.tsx
+*Legacy.tsx
+build
+.vite
