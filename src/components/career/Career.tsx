@@ -2,6 +2,7 @@ import React from "react";
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import { careerData } from "../../content/about/career";
 import CareerEntry from "./CareerEntry";
+import { motion } from "framer-motion";
 
 const Career: React.FC = () => {
   return (
@@ -13,7 +14,12 @@ const Career: React.FC = () => {
           <h2 className="text-2xl font-bold text-text-primary">Career</h2>
           <hr className="w-full border-t mt-2 border-gray-300" />
         </div>
-        <div className="space-y-4">
+        <motion.div
+          className="space-y-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           {careerData.companies.map((company, index) => (
             <CareerEntry
               key={`${company.title}-${index}`}
@@ -25,7 +31,7 @@ const Career: React.FC = () => {
               skills={company.skills}
             />
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* Educación */}
@@ -35,7 +41,12 @@ const Career: React.FC = () => {
           <h2 className="text-2xl font-bold text-text-primary">Education</h2>
           <hr className="w-full border-t mt-2 border-gray-300" />
         </div>
-        <div className="space-y-4">
+        <motion.div
+          className="space-y-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           {careerData.education.map((edu, index) => (
             <CareerEntry
               key={`${edu.institution}-${index}`}
@@ -47,7 +58,7 @@ const Career: React.FC = () => {
               skills={edu.skills}
             />
           ))}
-        </div>
+        </motion.div>
       </section>
     </div>
   );

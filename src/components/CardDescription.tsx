@@ -1,10 +1,16 @@
 import UserAvatar from "./UserAvatar";
+import { motion } from "framer-motion";
 
 type Props = {};
 
 function CardDescription({}: Props) {
   return (
-    <div className="container mx-auto">
+    <motion.div
+      className="container mx-auto"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="max-w-2xl mx-auto px-8 py-3 shadow-2xl shadow-blue-800 roun">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="flex items-center justify-center">
@@ -24,7 +30,7 @@ function CardDescription({}: Props) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
