@@ -11,11 +11,11 @@ type Props = {
 function MarkdownContent({ content }: Props) {
   return (
     <div
-      className="markdown-content"
+      className="markdown"
       style={{
         maxWidth: "none",
-        fontSize: "1.125rem",
-        lineHeight: "1.75rem",
+        fontSize: "1rem",
+        lineHeight: "1.6rem",
       }}
     >
       <Markdown
