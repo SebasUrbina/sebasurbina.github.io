@@ -191,10 +191,4 @@ console.log("Counting completed!");
 
 ---
 
-## Reflexión final
-
-Estoy disfrutando mucho aprender JavaScript. Estos fundamentos son solo el inicio, pero ya me ayudan a entender mejor cómo piensan los programas y cómo comunicarme con ellos.
-
-¿Tú también estás aprendiendo JS? ¡Cuéntame en los comentarios o compárteme tus tips!
-
 Hasta la próxima entrada 🙌
