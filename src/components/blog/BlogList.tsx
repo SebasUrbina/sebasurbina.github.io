@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BlogMetadata } from "../../types/Blog";
 import BlogCard from "./BlogCard";
 
