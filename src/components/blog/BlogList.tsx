@@ -15,11 +15,11 @@ function BlogList({}: Props) {
   }, []);
 
   return (
-    <div>
+    <>
       {posts.map((data) => (
         <BlogCard data={data} />
       ))}
-    </div>
+    </>
   );
 }
 
