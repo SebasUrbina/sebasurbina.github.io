@@ -10,9 +10,8 @@ const AchievementIcon: React.FC<AchievementIconProps> = ({ icon }) => {
 
   return (
     <div
-      className="flex items-center justify-center w-12 h-12 rounded-full theme-transition"
+      className="flex items-center bg-secondary justify-center w-12 h-12 rounded-full theme-transition"
       style={{
-        backgroundColor: "var(--color-secondary)",
         color: "var(--color-accent)",
       }}
     >

@@ -29,12 +29,12 @@ const BlogPostPage: React.FC = () => {
     return (
       <div className="container py-12">
         <div className="flex justify-center">
-          <div 
-            className="animate-spin rounded-full h-12 w-12" 
-            style={{ 
-              borderTopWidth: '2px', 
-              borderBottomWidth: '2px',
-              borderColor: 'var(--color-accent)'
+          <div
+            className="animate-spin rounded-full h-12 w-12"
+            style={{
+              borderTopWidth: "2px",
+              borderBottomWidth: "2px",
+              borderColor: "var(--color-accent)",
             }}
           ></div>
         </div>
@@ -45,14 +45,14 @@ const BlogPostPage: React.FC = () => {
   if (!post) {
     return (
       <div className="container py-12">
-        <h1 
-          className="text-4xl font-bold mb-6 theme-transition" 
+        <h1
+          className="text-4xl font-bold mb-6 theme-transition"
           style={{ color: "var(--color-text-primary)" }}
         >
           Post no encontrado
         </h1>
-        <p 
-          className="text-lg mb-6 theme-transition" 
+        <p
+          className="text-lg mb-6 theme-transition"
           style={{ color: "var(--color-text-secondary)" }}
         >
           Lo sentimos, no pudimos encontrar el post que estás buscando.
@@ -65,14 +65,14 @@ const BlogPostPage: React.FC = () => {
     <div className="container py-12 fade-in">
       <article className="max-w-3xl mx-auto">
         <header className="mb-8">
-          <h1 
-            className="text-4xl font-bold mb-4 theme-transition" 
+          <h1
+            className="text-4xl font-bold mb-4 theme-transition"
             style={{ color: "var(--color-text-primary)" }}
           >
             {post.title}
           </h1>
-          <div 
-            className="flex items-center space-x-4 theme-transition" 
+          <div
+            className="flex items-center space-x-4 theme-transition"
             style={{ color: "var(--color-text-muted)" }}
           >
             <time>{new Date(post.date).toLocaleDateString()}</time>
@@ -81,9 +81,9 @@ const BlogPostPage: React.FC = () => {
                 <span
                   key={tag}
                   className="px-2 py-1 text-xs rounded-full theme-transition"
-                  style={{ 
+                  style={{
                     backgroundColor: "var(--color-secondary)",
-                    color: "var(--color-text-primary)"
+                    color: "var(--color-text-primary)",
                   }}
                 >
                   {tag}

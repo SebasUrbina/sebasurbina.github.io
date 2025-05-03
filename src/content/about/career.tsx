@@ -1,6 +1,4 @@
 import { CareerData } from "../../types/Career";
-
-// Importar las imágenes (asegúrate de tener estas imágenes en la carpeta assets/images)
 import EntelLogo from "../../assets/images/entel.jpg";
 import UChileLogo from "../../assets/images/uchile.jpg";
 

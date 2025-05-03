@@ -1,0 +1,17 @@
+[
+    {
+      "title": "Hola Mundo 👋",
+      "excerpt": "Este es el primer post de mi blog.",
+      "date": "2025-04-12",
+      "slug": "hello-world",
+      "tags": ["hello", "world", "python", "javascript", "bash"]
+    },
+    {
+      "title": "Tips de React ⚛️",
+      "excerpt": "Te comparto algunos consejos útiles de React.",
+      "date": "2025-04-12",
+      "slug": "react-tips",
+      "tags": ["react", "frontend"]
+    }
+  ]
+  

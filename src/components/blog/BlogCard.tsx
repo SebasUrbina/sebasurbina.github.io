@@ -1,21 +1,11 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { BlogMetadata } from "../../types/Blog";
 
-interface BlogCardProps {
-  title: string;
-  excerpt: string;
-  date: string;
-  slug: string;
-  tags: string[];
-}
+type Props = {
+  data: BlogMetadata;
+};
 
-const BlogCard: React.FC<BlogCardProps> = ({
-  title,
-  excerpt,
-  date,
-  slug,
-  tags,
-}) => {
+export default function BlogCard({ data }: Props) {
   return (
     <article
       className="card p-6 theme-transition"
@@ -27,29 +17,29 @@ const BlogCard: React.FC<BlogCardProps> = ({
         <div className="flex-1">
           <h2 className="text-xl font-bold mb-2">
             <Link
-              to={`/blog/${slug}`}
+              to={`/blog/${data.slug}`}
               className="theme-transition"
               style={{ color: "var(--color-text-primary)" }}
               onMouseOver={(e) =>
                 (e.currentTarget.style.color = "var(--color-accent)")
               }
               onMouseOut={(e) =>
-                (e.currentTarget.style.color = "var(--color-text-primary)")
+                (e.currentTarget.style.color = "var(--color-text-sec)")
               }
             >
-              {title}
+              {data.title}
             </Link>
           </h2>
           <p
             className="mb-4 theme-transition"
             style={{ color: "var(--color-text-secondary)" }}
           >
-            {excerpt}
+            {data.excerpt}
           </p>
         </div>
         <div className="flex items-center justify-between mt-4">
           <div className="flex flex-wrap gap-2">
-            {tags.map((tag) => (
+            {data.tags.map((tag) => (
               <span
                 key={tag}
                 className="px-2 py-1 text-xs rounded-full theme-transition"
@@ -66,12 +56,10 @@ const BlogCard: React.FC<BlogCardProps> = ({
             className="text-sm theme-transition"
             style={{ color: "var(--color-text-muted)" }}
           >
-            {date}
+            {data.date}
           </time>
         </div>
       </div>
     </article>
   );
-};
-
-export default BlogCard;
+}

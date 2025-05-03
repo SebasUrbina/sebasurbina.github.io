@@ -1,13 +1,15 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-interface SocialLink {
+type SocialLink = {
   icon: React.ReactNode;
   href: string;
   label: string;
-}
+};
 
-const Footer: React.FC = () => {
+type Props = {};
+
+function Footer({}: Props) {
   const currentYear = new Date().getFullYear();
 
   const socialLinks: SocialLink[] = [
@@ -27,12 +29,8 @@ const Footer: React.FC = () => {
       label: "Email",
     },
   ];
-
   return (
-    <footer
-      className="w-full py-4 mt-8 theme-transition"
-      style={{ borderColor: "var(--color-border)" }}
-    >
+    <footer className="w-full py-4 mt-8 theme-transition">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center space-y-2">
           <div className="flex space-x-4">
@@ -56,6 +54,6 @@ const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

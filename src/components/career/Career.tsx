@@ -11,7 +11,7 @@ const Career: React.FC = () => {
         <div className="flex items-center gap-2 mb-4">
           <FaBriefcase className="text-xl text-accent" />
           <h2 className="text-2xl font-bold text-text-primary">Career</h2>
-          <hr className="w-full border-t border-accent mt-2 border-gray-300" />
+          <hr className="w-full border-t mt-2 border-gray-300" />
         </div>
         <div className="space-y-4">
           {careerData.companies.map((company, index) => (
@@ -33,7 +33,7 @@ const Career: React.FC = () => {
         <div className="flex items-center gap-2 mb-4">
           <FaGraduationCap className="text-xl text-accent" />
           <h2 className="text-2xl font-bold text-text-primary">Education</h2>
-          <hr className="w-full border-t border-accent mt-2 border-gray-300" />
+          <hr className="w-full border-t mt-2 border-gray-300" />
         </div>
         <div className="space-y-4">
           {careerData.education.map((edu, index) => (

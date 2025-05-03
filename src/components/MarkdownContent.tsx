@@ -1,11 +1,14 @@
-import React from "react";
-import ReactMarkdown from "react-markdown";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
-interface MarkdownContentProps {
+type Props = {
   content: string;
-}
+};
 
-const MarkdownContent: React.FC<MarkdownContentProps> = ({ content }) => {
+function MarkdownContent({ content }: Props) {
   return (
     <div
       className="markdown-content"
@@ -15,9 +18,34 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({ content }) => {
         lineHeight: "1.75rem",
       }}
     >
-      <ReactMarkdown>{content}</ReactMarkdown>
+      <Markdown
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
+        components={{
+          code({ node, inline, className, children, ...props }: any) {
+            const match = /language-(\w+)/.exec(className || "");
+
+            return !inline && match ? (
+              <SyntaxHighlighter
+                style={dracula}
+                PreTag="div"
+                language={match[1]}
+                {...props}
+              >
+                {String(children).replace(/\n$/, "")}
+              </SyntaxHighlighter>
+            ) : (
+              <code className={className} {...props}>
+                {children}
+              </code>
+            );
+          },
+        }}
+      >
+        {content}
+      </Markdown>
     </div>
   );
-};
+}
 
 export default MarkdownContent;

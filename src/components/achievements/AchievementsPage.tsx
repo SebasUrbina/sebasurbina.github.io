@@ -7,10 +7,7 @@ const AchievementsPage: React.FC = () => {
 
   return (
     <div className="container py-12 fade-in">
-      <h1
-        className="text-4xl font-bold mb-8 theme-transition"
-        style={{ color: "var(--color-text-primary)" }}
-      >
+      <h1 className="text-4xl font-bold mb-8 theme-transition text-primary">
         Logros
       </h1>
 
