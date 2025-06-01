@@ -5,6 +5,13 @@
       "date": "2025-05-02",
       "slug": "my-first-step-on-javascript",
       "tags": ["javascript"]
+    },
+    {
+      "title": "Principios Solid 💻",
+      "excerpt": "Los principios SOLID son un conjunto de cinco principios de diseño de software que ayudan a crear código más mantenible, flexible y escalable.",
+      "date": "2025-06-01",
+      "slug": "solid-principles",
+      "tags": ["python", "oop", "software development"]
     }
   ]
   
