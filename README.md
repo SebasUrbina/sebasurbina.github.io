@@ -1,54 +1,82 @@
-# React + TypeScript + Vite
+# Portfolio Personal - Sebastián Urbina
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio personal desarrollado con React, TypeScript y Vite. Una página web moderna y profesional que muestra mi perfil, logros, proyectos y blog personal.
 
-Currently, two official plugins are available:
+## 🚀 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Diseño Moderno**: Interfaz limpia y profesional con soporte para modo oscuro
+- **Blog Personal**: Sistema de blog integrado con soporte para Markdown
+- **Responsive**: Diseño completamente adaptable a diferentes dispositivos
+- **Animaciones**: Transiciones suaves con Framer Motion
+- **Performance**: Optimizado con Vite para carga rápida
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologías
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** - Biblioteca de UI
+- **TypeScript** - Tipado estático
+- **Vite** - Build tool y dev server
+- **Tailwind CSS** - Estilos utilitarios
+- **React Router** - Navegación
+- **Framer Motion** - Animaciones
+- **React Markdown** - Renderizado de contenido Markdown
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📦 Instalación
+
+```bash
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
+npm run dev
+
+# Construir para producción
+npm run build
+
+# Preview de producción
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Estructura del Proyecto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
 ```
+├── public/
+│   └── posts/          # Posts del blog en Markdown
+├── src/
+│   ├── components/     # Componentes reutilizables
+│   ├── pages/          # Páginas principales
+│   ├── layouts/        # Layouts de la aplicación
+│   ├── router/         # Configuración de rutas
+│   ├── types/          # Tipos TypeScript
+│   └── assets/         # Recursos estáticos
+```
+
+## 📝 Agregar Nuevos Posts
+
+1. Crea un archivo `.md` en `public/posts/`
+2. Agrega los metadatos en `public/posts/metadata.json`:
+
+```json
+{
+  "title": "Título del Post",
+  "excerpt": "Descripción breve",
+  "date": "YYYY-MM-DD",
+  "slug": "nombre-del-post",
+  "tags": ["tag1", "tag2"]
+}
+```
+
+## 🚢 Despliegue
+
+El proyecto está configurado para desplegarse en GitHub Pages:
+
+```bash
+npm run deploy
+```
+
+## 📄 Licencia
+
+Este proyecto es personal y privado.
+
+---
+
+Desarrollado con ❤️ por Sebastián Urbina
