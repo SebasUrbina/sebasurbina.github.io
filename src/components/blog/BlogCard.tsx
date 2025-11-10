@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { BlogMetadata } from "../../types/Blog";
 
 type Props = {
@@ -6,28 +8,49 @@ type Props = {
 };
 export default function BlogCard({ data }: Props) {
   return (
-    <Link to={`/blog/${data.slug}`} className="block">
-      <article className="p-6 theme-transition shadow-2xl rounded-lg bg-white dark:bg-gray-800 hover:translate-0.5 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer">
-        <div className="flex-1">
-          <h2 className="text-xl font-bold mb-2">
-            <span className="theme-transition">{data.title}</span>
-          </h2>
-          <p className="mb-4 theme-transition">{data.excerpt}</p>
-        </div>
-        <div className="flex items-center justify-between mt-4">
-          <div className="flex flex-wrap gap-2">
-            {data.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-2 py-1 text-xs rounded-full theme-transition bg-gray-100 dark:bg-gray-700"
-              >
-                {tag}
-              </span>
-            ))}
+    <Link to={`/blog/${data.slug}`} className="block h-full">
+      <motion.article
+        className="h-full p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col group"
+        whileHover={{ y: -8 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      >
+        {/* Header con gradiente */}
+        <div className="mb-4">
+          <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-blue-500 to-purple-600 text-white mb-3">
+            {new Date(data.date).toLocaleDateString("es-ES", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
           </div>
-          <time className="text-sm theme-transition">{data.date}</time>
+          <h2 className="text-xl font-bold mb-2 text-text-primary dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
+            {data.title}
+          </h2>
         </div>
-      </article>
+
+        {/* Excerpt */}
+        <p className="text-text-secondary dark:text-gray-300 mb-4 flex-grow line-clamp-3">
+          {data.excerpt}
+        </p>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {data.tags.slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="px-2.5 py-1 text-xs rounded-md bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Read more */}
+        <div className="flex items-center text-blue-600 dark:text-blue-400 font-medium text-sm group-hover:gap-2 transition-all">
+          Leer más
+          <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+        </div>
+      </motion.article>
     </Link>
   );
 }
