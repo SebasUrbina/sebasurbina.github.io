@@ -1,15 +1,25 @@
 import { CareerData } from "../../types/Career";
 import EntelLogo from "../../assets/images/entel.jpg";
 import UChileLogo from "../../assets/images/uchile.jpg";
+import BciLogo from "../../assets/images/bci.jpg";
 
 export const careerData: CareerData = {
   companies: [
+    {
+      title: "Bci Bank",
+      alt: "Bci Bank logo",
+      role: "Machine Learning Engineer",
+      skills:
+        "Langchain, Langgraph, RAG, LLMs, Microservices, FastAPI, Azure, Kubernetes",
+      period: "August 2025 - Present",
+      logo: BciLogo,
+    },
     {
       title: "Entel",
       alt: "Entel logo",
       role: "Data Scientist Senior Specialist / AI Engineer",
       skills: "RAG, LLMs, Microservices, FastAPI, AWS",
-      period: "March 2025 - Present",
+      period: "March 2025 - August 2025",
       logo: EntelLogo,
     },
     {
