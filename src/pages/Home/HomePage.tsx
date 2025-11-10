@@ -4,10 +4,12 @@ import { motion } from "framer-motion";
 import CardDescription from "@/components/CardDescription";
 import { BlogMetadata } from "@/types/Blog";
 import { ArrowRight, BookOpen } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HomePage: React.FC = () => {
   const [posts, setPosts] = useState<BlogMetadata[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     fetch("posts/metadata.json")
@@ -35,24 +37,23 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Recent Blogs Section */}
-      <section className="container mx-auto px-4 py-12 md:py-16">
+      <section className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-12"
+          className="mb-10"
         >
           <div className="flex items-center gap-3 mb-4">
             <div className="p-2 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 dark:from-blue-600 dark:to-purple-700">
               <BookOpen className="w-6 h-6 text-white" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 dark:from-blue-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
-              Blog Reciente
+              {t("home.recentBlog")}
             </h2>
           </div>
           <p className="text-lg text-text-secondary dark:text-gray-300 max-w-2xl">
-            Últimos artículos y reflexiones sobre tecnología, desarrollo y
-            ciencia de datos
+            {t("home.recentBlogDescription")}
           </p>
         </motion.div>
 
@@ -82,11 +83,14 @@ const HomePage: React.FC = () => {
                       {/* Header con gradiente */}
                       <div className="mb-4">
                         <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-blue-500 to-purple-600 text-white mb-3">
-                          {new Date(post.date).toLocaleDateString("es-ES", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                          })}
+                          {new Date(post.date).toLocaleDateString(
+                            language === "es" ? "es-ES" : "en-US",
+                            {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            }
+                          )}
                         </div>
                         <h3 className="text-xl font-bold mb-2 text-text-primary dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
                           {post.title}
@@ -112,7 +116,7 @@ const HomePage: React.FC = () => {
 
                       {/* Read more */}
                       <div className="flex items-center text-blue-600 dark:text-blue-400 font-medium text-sm group-hover:gap-2 transition-all">
-                        Leer más
+                        {t("home.readMore")}
                         <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </article>
@@ -132,7 +136,7 @@ const HomePage: React.FC = () => {
                 to="/blog"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
-                Ver todos los artículos
+                {t("home.viewAllArticles")}
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </motion.div>
@@ -144,7 +148,7 @@ const HomePage: React.FC = () => {
             className="text-center py-12"
           >
             <p className="text-text-secondary dark:text-gray-400">
-              No hay posts disponibles en este momento.
+              {t("home.noPosts")}
             </p>
           </motion.div>
         )}

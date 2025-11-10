@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { User } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import Career from "../../components/career/Career";
 
 const AboutPage: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <div className="min-h-screen">
       <div className="container mx-auto px-4 py-12 md:py-16">
@@ -19,11 +21,11 @@ const AboutPage: React.FC = () => {
               <User className="w-6 h-6 text-white" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 dark:from-blue-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
-              About Me
+              {t("about.title")}
             </h1>
           </div>
           <p className="text-lg text-text-secondary dark:text-gray-300 max-w-2xl">
-            Conoce más sobre mi trayectoria profesional, experiencia y educación
+            {t("about.description")}
           </p>
         </motion.div>
 

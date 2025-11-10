@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "achievements": "Logros",
+    "about": "Sobre Mí"
+  },
+  "home": {
+    "greeting": "¡Hola! 👋",
+    "name": "Sebastián Urbina",
+    "title": "Machine Learning Engineer / AI Engineer",
+    "description": "Bienvenido a mi sitio web personal. Soy apasionado por la ciencia de datos, machine learning y desarrollo de software. Aquí encontrarás mis proyectos, logros y reflexiones sobre tecnología.",
+    "recentBlog": "Blog Reciente",
+    "recentBlogDescription": "Últimos artículos y reflexiones sobre tecnología, desarrollo y ciencia de datos",
+    "readMore": "Leer más",
+    "viewAllArticles": "Ver todos los artículos",
+    "noPosts": "No hay posts disponibles en este momento."
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "description": "Conoce más sobre mi trayectoria profesional, experiencia y educación",
+    "career": "Carrera",
+    "educationLabel": "Educación",
+    "companies": {
+      "bci": {
+        "title": "Bci Bank",
+        "role1": "Machine Learning Engineer",
+        "period1": "Agosto 2025 - Presente"
+      },
+      "entel": {
+        "title": "Entel",
+        "role1": "Data Scientist Senior Specialist / AI Engineer",
+        "role2": "Data Scientist Specialist / AI Engineer",
+        "role3": "Data Scientist",
+        "period1": "Marzo 2025 - Agosto 2025",
+        "period2": "Marzo 2024 - Febrero 2025",
+        "period3": "Agosto 2023 - Febrero 2024"
+      }
+    },
+    "education": {
+      "uchile": {
+        "institution": "Universidad de Chile",
+        "degree1": "Magíster en Ciencia de Datos",
+        "degree2": "Ingeniería Civil Industrial",
+        "period1": "2023 - 2024",
+        "period2": "2018 - 2023"
+      }
+    }
+  },
+  "achievements": {
+    "title": "Logros",
+    "description": "Logros, reconocimientos y hitos importantes en mi carrera profesional",
+    "items": {
+      "expenseApi": "Implementé un bot de Telegram serverless usando AWS Lambda y DynamoDB para registrar gastos personales.",
+      "expenseBot": "Implementé un bot de Telegram serverless usando AWS Lambda y DynamoDB para registrar gastos personales.",
+      "learnedJS": "Comencé a aprender {js} y {ts}",
+      "learnedPython": "Comencé a aprender Python.",
+      "portfolio": "Construí mi sitio web de portafolio con React, Typescript y Tailwind usando Github Pages.",
+      "docker": "Aprendí nuevas tecnologías como Docker.",
+      "developer": "Comencé mi viaje como desarrollador.",
+      "masters": "Obtuve mi Magíster en Ciencia de Datos de la Universidad de Chile.",
+      "bachelors": "Obtuve mi título de Ingeniería Civil Industrial de la Universidad de Chile.",
+      "metaJS": "Completé el curso de Meta \"Programming with JavaScript\".",
+      "metaFrontend": "Completé el curso de Meta \"Introduction to Front-End Development\".",
+      "viewCertificate": "(Ver Certificado)",
+      "sourceOnGithub": "código en Github"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Artículos, reflexiones y pensamientos sobre tecnología, desarrollo y ciencia de datos"
+  },
+  "footer": {
+    "copyright": "© {year} Sebastián Urbina. Todos los derechos reservados.",
+    "allRightsReserved": "Todos los derechos reservados."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error"
+  }
+}
+

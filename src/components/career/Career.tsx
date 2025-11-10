@@ -1,10 +1,13 @@
 import React from "react";
 import { Briefcase, GraduationCap } from "lucide-react";
-import { careerData } from "../../content/about/career";
+import { useCareerData } from "../../hooks/useCareerData";
 import CareerEntry from "./CareerEntry";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Career: React.FC = () => {
+  const { t } = useLanguage();
+  const careerData = useCareerData();
   return (
     <div className="space-y-12">
       {/* Experiencia Laboral */}
@@ -19,7 +22,7 @@ const Career: React.FC = () => {
             <Briefcase className="w-5 h-5 text-white" />
           </div>
           <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-            Career
+            {t("about.career")}
           </h2>
         </motion.div>
         <div className="space-y-4">
@@ -55,7 +58,7 @@ const Career: React.FC = () => {
             <GraduationCap className="w-5 h-5 text-white" />
           </div>
           <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-            Education
+            {t("about.educationLabel")}
           </h2>
         </motion.div>
         <div className="space-y-4">

@@ -3,9 +3,11 @@ import AchievementsByYear from "../../components/achievements/AchievementsByYear
 import { useAchievements } from "../../hooks/useAchievements";
 import { motion } from "framer-motion";
 import { Trophy } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AchievementsPage: React.FC = () => {
   const { achievementsByYear, years } = useAchievements();
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen">
@@ -22,12 +24,11 @@ const AchievementsPage: React.FC = () => {
               <Trophy className="w-6 h-6 text-white" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 dark:from-blue-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
-              Achievements
+              {t("achievements.title")}
             </h1>
           </div>
           <p className="text-lg text-text-secondary dark:text-gray-300 max-w-2xl">
-            Logros, reconocimientos y hitos importantes en mi carrera
-            profesional
+            {t("achievements.description")}
           </p>
         </motion.div>
 

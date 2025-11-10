@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import { ModeToggle } from "./ModeToggle";
+import { LanguageToggle } from "./LanguageToggle";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { X, AlignJustify } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 import UserAvatar from "@/components/UserAvatar";
 
 type Props = {};
@@ -17,12 +19,13 @@ type Props = {};
 function NavBarv2({}: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
 
   const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/blog", label: "Blog" },
-    { to: "/achievements", label: "Achievements" },
-    { to: "/about", label: "About Me" },
+    { to: "/", labelKey: "nav.home" },
+    { to: "/blog", labelKey: "nav.blog" },
+    { to: "/achievements", labelKey: "nav.achievements" },
+    { to: "/about", labelKey: "nav.about" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -52,7 +55,7 @@ function NavBarv2({}: Props) {
                   }`}
                 >
                   <Link to={link.to}>
-                    {link.label}
+                    {t(link.labelKey)}
                     {isActive(link.to) && (
                       <motion.div
                         layoutId="activeTab"
@@ -78,8 +81,9 @@ function NavBarv2({}: Props) {
             </motion.div>
           </div>
 
-          {/* Mode toggle - visible on all screens */}
+          {/* Mode toggle and Language toggle - visible on all screens */}
           <div className="flex items-center space-x-2">
+            <LanguageToggle />
             <ModeToggle />
 
             {/* Mobile menu - only visible on mobile */}
@@ -107,7 +111,7 @@ function NavBarv2({}: Props) {
                             : ""
                         }`}
                       >
-                        {link.label}
+                        {t(link.labelKey)}
                       </Link>
                     </DropdownMenuItem>
                   ))}

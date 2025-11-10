@@ -1,10 +1,12 @@
 import UserAvatar from "./UserAvatar";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type Props = {};
 
 function CardDescription({}: Props) {
+  const { t } = useLanguage();
   return (
     <motion.div
       className="container mx-auto"
@@ -43,7 +45,7 @@ function CardDescription({}: Props) {
                 <div className="flex items-center gap-3 justify-center md:justify-start mb-2">
                   <Sparkles className="w-6 h-6 text-blue-500 dark:text-blue-400" />
                   <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 dark:from-blue-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
-                    ¡Hola! 👋
+                    {t("home.greeting")}
                   </h1>
                 </div>
               </motion.div>
@@ -54,13 +56,10 @@ function CardDescription({}: Props) {
                 transition={{ delay: 0.3, duration: 0.5 }}
               >
                 <h2 className="text-2xl md:text-3xl font-semibold text-text-primary dark:text-white mb-2">
-                  I'm{" "}
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent font-bold">
-                    Sebastián Urbina
-                  </span>
+                  {t("home.name")}
                 </h2>
                 <p className="text-lg md:text-xl text-blue-600 dark:text-blue-400 font-medium mb-4">
-                  Machine Learning Engineer / AI Engineer
+                  {t("home.title")}
                 </p>
               </motion.div>
 
@@ -70,9 +69,7 @@ function CardDescription({}: Props) {
                 transition={{ delay: 0.4, duration: 0.5 }}
               >
                 <p className="text-base md:text-lg text-text-secondary dark:text-gray-300 leading-relaxed max-w-2xl">
-                Welcome to my personal website. I'm passionate about data science,
-              machine learning, and software development. Here you can find my
-              projects, achievements, and thoughts on technology.
+                  {t("home.description")}
                 </p>
               </motion.div>
             </div>

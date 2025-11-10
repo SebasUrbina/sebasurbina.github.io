@@ -1,6 +1,7 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type SocialLink = {
   icon: React.ReactNode;
@@ -12,6 +13,7 @@ type Props = {};
 
 function Footer({}: Props) {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   const socialLinks: SocialLink[] = [
     {
@@ -60,7 +62,7 @@ function Footer({}: Props) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            © {currentYear} Sebastián Urbina. All rights reserved.
+            {t("footer.copyright", { year: currentYear.toString() })}
           </motion.div>
         </div>
       </div>

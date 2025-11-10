@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "achievements": "Achievements",
+    "about": "About Me"
+  },
+  "home": {
+    "greeting": "Hello! 👋",
+    "name": "Sebastián Urbina",
+    "title": "Machine Learning Engineer / AI Engineer",
+    "description": "Welcome to my personal website. I'm passionate about data science, machine learning, and software development. Here you can find my projects, achievements, and thoughts on technology.",
+    "recentBlog": "Recent Blog",
+    "recentBlogDescription": "Latest articles and reflections on technology, development and data science",
+    "readMore": "Read more",
+    "viewAllArticles": "View all articles",
+    "noPosts": "No posts available at this time."
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Learn more about my professional journey, experience and education",
+    "career": "Career",
+    "educationLabel": "Education",
+    "companies": {
+      "bci": {
+        "title": "Bci Bank",
+        "role1": "Machine Learning Engineer",
+        "period1": "August 2025 - Present"
+      },
+      "entel": {
+        "title": "Entel",
+        "role1": "Data Scientist Senior Specialist / AI Engineer",
+        "role2": "Data Scientist Specialist / AI Engineer",
+        "role3": "Data Scientist",
+        "period1": "March 2025 - August 2025",
+        "period2": "March 2024 - February 2025",
+        "period3": "August 2023 - February 2024"
+      }
+    },
+    "education": {
+      "uchile": {
+        "institution": "Universidad de Chile",
+        "degree1": "Master's Degree in Data Science",
+        "degree2": "Bachelor's Degree in Industrial Engineering",
+        "period1": "2023 - 2024",
+        "period2": "2018 - 2023"
+      }
+    }
+  },
+  "achievements": {
+    "title": "Achievements",
+    "description": "Achievements, recognitions and important milestones in my professional career",
+    "items": {
+      "expenseApi": "Implemented an serverless expense tracking API using AWS Lambda and API Gateway",
+      "expenseBot": "Implemented a serverless telegram bot using AWS Lambda and DynamoDB to record personal expenses.",
+      "learnedJS": "Started learning {js} & {ts}",
+      "learnedPython": "Started learning Python.",
+      "portfolio": "Built my portfolio website with React, Typescript and Tailwind using Github Pages.",
+      "docker": "Learnt new technologies like Docker.",
+      "developer": "Starting my journey as a developer.",
+      "masters": "Got my Master's Degree in Data Science from Universidad de Chile.",
+      "bachelors": "Got my Bachelor's Degree in Industrial Engineering from Universidad de Chile.",
+      "metaJS": "Completed Meta's \"Programming with JavaScript\" course.",
+      "metaFrontend": "Completed Meta's \"Introduction to Front-End Development\" course.",
+      "viewCertificate": "(View Certificate)",
+      "sourceOnGithub": "source on Github"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Articles, reflections and thoughts on technology, development and data science"
+  },
+  "footer": {
+    "copyright": "© {year} Sebastián Urbina. All rights reserved.",
+    "allRightsReserved": "All rights reserved."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error"
+  }
+}
+
