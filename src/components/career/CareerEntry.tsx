@@ -28,7 +28,7 @@ const CareerEntry: React.FC<CareerEntryProps> = ({
           <img
             src={logo}
             alt={alt}
-            className="w-12 h-12 rounded-full object-cover border border-helix-cyan/30"
+          className="w-12 h-12 rounded-full object-cover border border-helix-cyan/30 bg-white"
           />
         </div>
 
