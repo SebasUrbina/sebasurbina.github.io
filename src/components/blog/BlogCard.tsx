@@ -7,7 +7,7 @@ type Props = {
 };
 
 export default function BlogCard({ data }: Props) {
-  const { language } = useLanguage();
+  const { t } = useLanguage();
 
   // Format date as YYYY-MM-DD
   const formattedDate = new Date(data.date).toLocaleDateString("en-CA"); // ISO format
@@ -47,7 +47,7 @@ export default function BlogCard({ data }: Props) {
 
         {/* Read more indicator */}
         <div className="font-mono text-xs text-text-dim mt-2 pl-4 group-hover:text-helix-cyan transition-colors">
-          &gt; read more...
+          &gt; {t('blog.readMore')}
         </div>
       </article>
     </Link>

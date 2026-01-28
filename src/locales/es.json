@@ -68,7 +68,8 @@
   },
   "blog": {
     "title": "Blog",
-    "description": "Artículos, reflexiones y pensamientos sobre tecnología, desarrollo y ciencia de datos"
+    "description": "Artículos, reflexiones y pensamientos sobre tecnología, desarrollo y ciencia de datos",
+    "readMore": "leer más..."
   },
   "footer": {
     "copyright": "© {year} Sebastián Urbina. Todos los derechos reservados.",
