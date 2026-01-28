@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import MarkdownContent from "../../components/MarkdownContent";
-import { motion } from "framer-motion";
 
 type Props = {};
 
 export default function BlogPostPage({}: Props) {
-  const { slug } = useParams(); // get slug from url
+  const { slug } = useParams();
   const [postContent, setPostcontent] = useState<string>("");
   const [isLoading, setIsLoading] = useState(true);
 
@@ -19,29 +18,20 @@ export default function BlogPostPage({}: Props) {
         setIsLoading(false);
       })
       .catch((err) => {
-        console.error("Error al cargar el post", err);
+        console.error("Error loading post", err);
         setIsLoading(false);
       });
   }, [slug]);
 
   return (
-    <motion.div
-      className="mx-auto px-4 md:px-8 lg:px-16 max-w-4xl"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div className="mx-auto px-4 md:px-8 lg:px-16 max-w-4xl py-8">
       {isLoading ? (
-        <div className="text-center py-12">Cargando...</div>
+        <div className="text-center py-12 font-mono text-text-dim">
+          Loading...
+        </div>
       ) : (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.4 }}
-        >
-          <MarkdownContent content={postContent} />
-        </motion.div>
+        <MarkdownContent content={postContent} />
       )}
-    </motion.div>
+    </div>
   );
 }

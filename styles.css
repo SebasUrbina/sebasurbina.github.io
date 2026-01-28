@@ -1,0 +1,111 @@
+/* Import JetBrains Mono font */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables - Terminal Space Theme */
+:root {
+  /* Backgrounds */
+  --bg-deep-space: #0a1929;
+  --bg-darker: #050d14;
+  --bg-terminal: rgba(10, 25, 41, 0.85);
+  
+  /* Helix Nebula Colors */
+  --helix-cyan: #00bcd4;
+  --helix-teal: #26a69a;
+  --helix-green: #4caf50;
+  --helix-blue: #489bcf;
+  --helix-purple: #4a61a4;
+  
+  /* Text Colors */
+  --text-primary: #e0e0e0;
+  --text-bright: #ffffff;
+  --text-dim: #6b7280;
+  --text-accent: var(--helix-cyan);
+  
+  /* Effects */
+  --glow-cyan: rgba(0, 188, 212, 0.4);
+  --glow-teal: rgba(38, 166, 154, 0.3);
+  --scanline: rgba(0, 188, 212, 0.03);
+  
+  /* Typography */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-mono);
+  background-color: var(--bg-deep-space);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--helix-cyan);
+  color: var(--bg-deep-space);
+}
+
+/* Links */
+a {
+  color: var(--helix-cyan);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 8px var(--glow-cyan);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--text-bright);
+}
+
+/* Code blocks */
+code, pre {
+  font-family: var(--font-mono);
+  background-color: var(--bg-darker);
+  border-radius: 4px;
+}
+
+code {
+  padding: 2px 6px;
+  font-size: 0.9em;
+}
+
+pre {
+  padding: 16px;
+  overflow-x: auto;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--helix-cyan);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--helix-teal);
+}
+

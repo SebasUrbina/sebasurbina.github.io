@@ -17,7 +17,7 @@ export function LanguageToggle() {
     { code: "en", label: "English", flag: "🇺🇸" },
   ];
 
-  const currentLang = languages.find((lang) => lang.code === language);
+
 
   return (
     <DropdownMenu>
@@ -25,30 +25,21 @@ export function LanguageToggle() {
         <Button
           variant="outline"
           size="icon"
-          className="border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800"
+          className="border-helix-cyan/30 bg-transparent hover:bg-helix-cyan/10 text-text-bright hover:text-helix-cyan"
           aria-label="Change language"
         >
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="flex items-center gap-2"
-          >
-            <Languages className="h-4 w-4" />
-            <span className="text-sm hidden sm:inline">
-              {currentLang?.flag}
-            </span>
-          </motion.div>
+          <Languages size={20} />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-40">
+      <DropdownMenuContent align="end" className="w-40 bg-space-darker border-helix-cyan/30 font-mono">
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             onClick={() => setLanguage(lang.code)}
             className={`cursor-pointer ${
               language === lang.code
-                ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-semibold"
-                : ""
+                ? "bg-helix-cyan/20 text-helix-cyan font-semibold"
+                : "text-text-primary hover:text-helix-cyan"
             }`}
           >
             <div className="flex items-center gap-2 w-full">
@@ -58,7 +49,7 @@ export function LanguageToggle() {
                 <motion.span
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  className="ml-auto text-blue-600 dark:text-blue-400"
+                  className="ml-auto text-helix-cyan"
                 >
                   ✓
                 </motion.span>

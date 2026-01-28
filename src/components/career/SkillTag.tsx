@@ -1,9 +1,11 @@
+import React from "react";
+
 interface SkillTagProps {
   skill: string;
 }
 
 const SkillTag: React.FC<SkillTagProps> = ({ skill }) => (
-  <span className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-200">
+  <span className="font-mono text-xs px-2 py-1 border border-helix-cyan/30 text-text-dim hover:text-helix-cyan hover:border-helix-cyan/60 transition-colors">
     {skill}
   </span>
 );

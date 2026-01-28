@@ -1,61 +1,55 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { BlogMetadata } from "../../types/Blog";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 type Props = {
   data: BlogMetadata;
 };
+
 export default function BlogCard({ data }: Props) {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
+
+  // Format date as YYYY-MM-DD
+  const formattedDate = new Date(data.date).toLocaleDateString("en-CA"); // ISO format
+
   return (
-    <Link to={`/blog/${data.slug}`} className="block h-full">
-      <motion.article
-        className="h-full p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col group"
-        whileHover={{ y: -8 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      >
-        {/* Header con gradiente */}
-        <div className="mb-4">
-          <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-blue-500 to-purple-600 text-white mb-3">
-            {new Date(data.date).toLocaleDateString(
-              language === "es" ? "es-ES" : "en-US",
-              {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              }
-            )}
-          </div>
-          <h2 className="text-xl font-bold mb-2 text-text-primary dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
+    <Link 
+      to={`/blog/${data.slug}`} 
+      className="block group"
+    >
+      <article className="py-4 border-b border-helix-cyan/20 hover:border-helix-cyan/40 transition-all duration-200">
+        {/* Terminal-style title */}
+        <h2 className="font-mono text-lg mb-2">
+          <span className="text-helix-cyan">&gt;&gt; {formattedDate} [POST]:</span>{" "}
+          <span className="text-text-bright group-hover:text-helix-teal transition-colors">
             {data.title}
-          </h2>
-        </div>
+          </span>
+        </h2>
 
         {/* Excerpt */}
-        <p className="text-text-secondary dark:text-gray-300 mb-4 flex-grow line-clamp-3">
+        <p className="font-mono text-sm text-text-dim mb-3 line-clamp-2 pl-4">
           {data.excerpt}
         </p>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {data.tags.slice(0, 3).map((tag) => (
-            <span
-              key={tag}
-              className="px-2.5 py-1 text-xs rounded-md bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+        {data.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 pl-4">
+            {data.tags.slice(0, 3).map((tag) => (
+              <span
+                key={tag}
+                className="font-mono text-xs text-helix-teal"
+              >
+                #{tag}
+              </span>
+            ))}
+          </div>
+        )}
 
-        {/* Read more */}
-        <div className="flex items-center text-blue-600 dark:text-blue-400 font-medium text-sm group-hover:gap-2 transition-all">
-          {t("home.readMore")}
-          <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+        {/* Read more indicator */}
+        <div className="font-mono text-xs text-text-dim mt-2 pl-4 group-hover:text-helix-cyan transition-colors">
+          &gt; read more...
         </div>
-      </motion.article>
+      </article>
     </Link>
   );
 }
