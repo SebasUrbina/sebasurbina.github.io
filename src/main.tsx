@@ -14,6 +14,8 @@ import {
 import type { Post } from "./types";
 import { translations } from "./i18n";
 import type { Language } from "./i18n";
+import { themes } from "./themes";
+import type { ThemeId } from "./themes";
 import "./globals.css";
 
 const cvUrl =
@@ -117,6 +119,12 @@ function Home() {
     if (saved === "es" || saved === "en") return saved;
     return navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
   });
+  const [themeId, setThemeId] = useState<ThemeId>(() => {
+    const saved = localStorage.getItem("portfolio-theme");
+    return themes.some((theme) => theme.id === saved)
+      ? (saved as ThemeId)
+      : "omarchy";
+  });
   const [time, setTime] = useState("");
   const [active, setActive] = useState("about");
   const [launcher, setLauncher] = useState(false);
@@ -149,6 +157,14 @@ function Home() {
     document.documentElement.lang = language;
     localStorage.setItem("portfolio-language", language);
   }, [language]);
+  useEffect(() => {
+    const selectedTheme = themes.find((theme) => theme.id === themeId) ?? themes[0];
+    for (const [property, value] of Object.entries(selectedTheme.colors)) {
+      document.documentElement.style.setProperty(`--${property}`, value);
+    }
+    document.documentElement.dataset.theme = themeId;
+    localStorage.setItem("portfolio-theme", themeId);
+  }, [themeId]);
   useEffect(() => {
     const close = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
@@ -316,9 +332,19 @@ function Home() {
                 <div className="swatches">
                   <dt>{t.labels.theme}</dt>
                   <dd>
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
-                      <i key={n} />
+                    {themes.map((theme) => (
+                      <button
+                        key={theme.id}
+                        type="button"
+                        className={theme.id === themeId ? "active" : ""}
+                        style={{ background: theme.swatch }}
+                        title={theme.name}
+                        aria-label={`Theme: ${theme.name}`}
+                        aria-pressed={theme.id === themeId}
+                        onClick={() => setThemeId(theme.id)}
+                      />
                     ))}
+                    <span>{themes.find((theme) => theme.id === themeId)?.name}</span>
                   </dd>
                 </div>
               </dl>
