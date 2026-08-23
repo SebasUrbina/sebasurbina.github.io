@@ -1,82 +1,148 @@
-# Portfolio Personal - Sebastián Urbina
+# Portfolio — Sebastián Urbina
 
-Portfolio personal desarrollado con React, TypeScript y Vite. Una página web moderna y profesional que muestra mi perfil, logros, proyectos y blog personal.
+Sitio web personal de Sebastián Urbina, Machine Learning Engineer enfocado en inteligencia artificial generativa, ciencia de datos y desarrollo de software.
 
-## 🚀 Características
+El portfolio utiliza una interfaz inspirada en un escritorio Linux y una terminal. Reúne mi perfil profesional, experiencia, educación, logros, artículos y enlaces de contacto en una aplicación web rápida y responsive.
 
-- **Diseño Moderno**: Interfaz limpia y profesional con soporte para modo oscuro
-- **Blog Personal**: Sistema de blog integrado con soporte para Markdown
-- **Responsive**: Diseño completamente adaptable a diferentes dispositivos
-- **Animaciones**: Transiciones suaves con Framer Motion
-- **Performance**: Optimizado con Vite para carga rápida
+**Sitio:** [sebasurbina.github.io](https://sebasurbina.github.io/)
 
-## 🛠️ Tecnologías
+## Características
 
-- **React 19** - Biblioteca de UI
-- **TypeScript** - Tipado estático
-- **Vite** - Build tool y dev server
-- **Tailwind CSS** - Estilos utilitarios
-- **React Router** - Navegación
-- **Framer Motion** - Animaciones
-- **React Markdown** - Renderizado de contenido Markdown
+- Interfaz tipo escritorio y terminal, construida con CSS propio.
+- Perfil profesional presentado mediante una vista inspirada en `fastfetch`.
+- Trayectoria laboral, educación y logros en una ventana interactiva.
+- Blog integrado con artículos escritos en Markdown.
+- Command palette para navegar y ejecutar acciones rápidamente.
+- Descarga del CV con una animación de comando `curl` en el terminal.
+- Detección automática del idioma del navegador en español e inglés.
+- Selector manual de idioma con preferencia persistida en `localStorage`.
+- Enlaces directos a GitHub, LinkedIn y correo electrónico.
+- Diseño adaptable para escritorio y dispositivos móviles.
+- Despliegue automático en GitHub Pages mediante GitHub Actions.
 
-## 📦 Instalación
+## Command palette
+
+El lanzador se abre haciendo clic en la marca superior o mediante:
+
+```text
+Ctrl + K       Windows / Linux
+Command + K    macOS
+```
+
+Permite buscar artículos, experiencia, tecnologías y empresas, además de abrir redes sociales o descargar el CV. Se puede navegar con las flechas, ejecutar una acción con `Enter` y cerrar con `Esc`.
+
+## Stack
+
+- **React 19** para construir la interfaz y gestionar las interacciones.
+- **TypeScript 6** para tipado estático y validación durante el build.
+- **Vite 8** como servidor de desarrollo y herramienta de compilación.
+- **CSS nativo** para el sistema visual, animaciones y diseño responsive.
+- **pnpm 10** para instalación y administración reproducible de dependencias.
+- **Oxlint** para análisis estático del código.
+- **GitHub Actions** para integración y despliegue continuo.
+- **GitHub Pages** para alojar el sitio estático.
+
+El proyecto evita frameworks de estilos y librerías de componentes. La interfaz, el renderizado básico de Markdown, la internacionalización y el command palette están implementados directamente en la aplicación.
+
+## Requisitos
+
+- [Node.js](https://nodejs.org/) 22 o superior.
+- [pnpm](https://pnpm.io/) 10.
+
+## Desarrollo local
 
 ```bash
-# Instalar dependencias
-npm install
-
-# Iniciar servidor de desarrollo
-npm run dev
-
-# Construir para producción
-npm run build
-
-# Preview de producción
-npm run preview
+git clone https://github.com/SebasUrbina/sebasurbina.github.io.git
+cd sebasurbina.github.io
+pnpm install
+pnpm dev
 ```
 
-## 📁 Estructura del Proyecto
+Vite servirá la aplicación en `http://127.0.0.1:5173`.
 
+## Comandos disponibles
+
+```bash
+pnpm dev       # Inicia el servidor de desarrollo
+pnpm build     # Comprueba TypeScript y genera dist/
+pnpm preview   # Sirve localmente el build de producción
+pnpm lint      # Ejecuta Oxlint
 ```
+
+## Estructura del proyecto
+
+```text
+.
+├── .github/workflows/
+│   └── deploy-pages.yml     # Build y despliegue en GitHub Pages
 ├── public/
-│   └── posts/          # Posts del blog en Markdown
+│   ├── fonts/               # Fuentes Geist y Geist Mono
+│   └── favicon.svg
 ├── src/
-│   ├── components/     # Componentes reutilizables
-│   ├── pages/          # Páginas principales
-│   ├── layouts/        # Layouts de la aplicación
-│   ├── router/         # Configuración de rutas
-│   ├── types/          # Tipos TypeScript
-│   └── assets/         # Recursos estáticos
+│   ├── content/posts/       # Artículos Markdown y sus recursos
+│   ├── assets/              # Imágenes locales
+│   ├── data.ts              # Perfil, posts, trayectoria y enlaces
+│   ├── globals.css          # Diseño completo y estilos responsive
+│   ├── i18n.tsx             # Textos en español e inglés
+│   ├── main.tsx             # Interfaz y comportamiento principal
+│   └── types.ts             # Tipos compartidos
+├── index.html
+├── package.json
+├── pnpm-lock.yaml
+└── vite.config.ts
 ```
 
-## 📝 Agregar Nuevos Posts
+## Agregar un artículo
 
-1. Crea un archivo `.md` en `public/posts/`
-2. Agrega los metadatos en `public/posts/metadata.json`:
+1. Crea el archivo Markdown dentro de `src/content/posts/`.
+2. Impórtalo con `?raw` en `src/data.ts`:
 
-```json
+```ts
+import newPost from "./content/posts/my-new-post.md?raw";
+```
+
+3. Agrega sus metadatos al arreglo `posts`:
+
+```ts
 {
-  "title": "Título del Post",
-  "excerpt": "Descripción breve",
-  "date": "YYYY-MM-DD",
-  "slug": "nombre-del-post",
-  "tags": ["tag1", "tag2"]
+  date: "01 ENE 2027",
+  title: "Título del artículo",
+  tag: "typescript",
+  excerpt: "Descripción breve del artículo.",
+  content: newPost,
 }
 ```
 
-## 🚢 Despliegue
+4. Si el título y el resumen deben aparecer traducidos, agrega ambas versiones en `src/i18n.tsx`. El contenido completo puede mantenerse en su idioma original.
 
-El proyecto está configurado para desplegarse en GitHub Pages:
+## Internacionalización
 
-```bash
-npm run deploy
-```
+La aplicación detecta `navigator.language` durante la primera visita:
 
-## 📄 Licencia
+- Los idiomas `es-*` utilizan español.
+- Los demás idiomas utilizan inglés.
+- El visitante puede cambiar manualmente entre `ES` y `EN`.
+- La selección se conserva en `localStorage`.
 
-Este proyecto es personal y privado.
+Los textos de interfaz se administran desde `src/i18n.tsx`, mientras que la información profesional se mantiene separada en `src/data.ts`.
+
+## Despliegue
+
+El workflow `.github/workflows/deploy-pages.yml` se ejecuta con cada push a `main` y también puede iniciarse manualmente desde la pestaña **Actions**.
+
+El proceso:
+
+1. Prepara pnpm 10 y Node.js 22.
+2. Instala dependencias con `pnpm install --frozen-lockfile`.
+3. Ejecuta `pnpm run build`.
+4. Publica el directorio `dist/` en GitHub Pages.
+
+Para habilitarlo, configura una sola vez **Settings → Pages → Build and deployment → Source → GitHub Actions** en el repositorio.
+
+## Licencia
+
+Este es un proyecto de portfolio personal. Su contenido, artículos e información personal pertenecen a Sebastián Urbina.
 
 ---
 
-Desarrollado con ❤️ por Sebastián Urbina
+Construido por [Sebastián Urbina](https://github.com/SebasUrbina).

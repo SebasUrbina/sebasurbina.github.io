@@ -1,0 +1,23 @@
+[
+    {
+      "title": "Mi Primer Paso en JavaScript 🚀",
+      "excerpt": "Este es mi primer blog con mis notas de mi aprendizaje de Javascript.",
+      "date": "2025-05-02",
+      "slug": "my-first-step-on-javascript",
+      "tags": ["javascript"]
+    },
+    {
+      "title": "Principios Solid 💻",
+      "excerpt": "Los principios SOLID son un conjunto de cinco principios de diseño de software que ayudan a crear código más mantenible, flexible y escalable.",
+      "date": "2025-06-01",
+      "slug": "solid-principles",
+      "tags": ["python", "oop", "software development"]
+    },
+    {
+      "title": "Mi app de finanzas personales 💰",
+      "excerpt": "La historia de cómo construí mi aplicación de finanzas personales usando Atajos de iOS, AWS Lambda, Google Sheets y su posterior evolución a Cloudflare Workers y D1.",
+      "date": "2026-06-08",
+      "slug": "my-personal-finance-app",
+      "tags": ["aws", "cloudflare", "serverless", "personal finance"]
+    }
+  ]

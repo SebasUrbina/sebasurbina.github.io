@@ -22,8 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-node_modules/
-*legacy.tsx
-*Legacy.tsx
-build
-.vite
+
+# Previous site kept locally during the migration
+leagacy-site/
+legacy-site/
