@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 380" font-family="Geist, ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#c9ef78"/>
+    </marker>
+  </defs>
+
+  <rect x="20" y="126" width="152" height="104" rx="12" fill="#15191f" stroke="#73b9d5"/>
+  <g text-anchor="middle">
+    <text x="96" y="160" font-size="14" font-weight="600" fill="#e7e5df">Problema real</text>
+    <text x="96" y="178" font-size="14" font-weight="600" fill="#e7e5df">de una persona</text>
+    <text x="96" y="202" font-size="12" fill="#858b94">necesidad, objetivo</text>
+    <text x="96" y="218" font-size="12" fill="#858b94">y contexto</text>
+  </g>
+  <line x1="174" y1="178" x2="206" y2="178" stroke="#c9ef78" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="210" y="24" width="360" height="290" rx="16" fill="#c9ef78" fill-opacity="0.03" stroke="#c9ef78" stroke-opacity="0.6" stroke-dasharray="6 5"/>
+  <text x="230" y="52" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="1.5" fill="#c9ef78">HARNESS · SISTEMA AGÉNTICO</text>
+
+  <g stroke="#3a404a" stroke-width="1">
+    <line x1="305" y1="118" x2="360" y2="150"/>
+    <line x1="475" y1="118" x2="420" y2="150"/>
+    <line x1="305" y1="236" x2="360" y2="210"/>
+    <line x1="475" y1="236" x2="420" y2="210"/>
+  </g>
+
+  <g text-anchor="middle" font-size="12" fill="#e7e5df">
+    <rect x="225" y="78" width="160" height="40" rx="8" fill="#15191f" stroke="#292e37"/>
+    <text x="305" y="102">Contexto y memoria</text>
+    <rect x="395" y="78" width="160" height="40" rx="8" fill="#15191f" stroke="#292e37"/>
+    <text x="475" y="102">Tools e integraciones</text>
+    <rect x="225" y="236" width="160" height="40" rx="8" fill="#15191f" stroke="#292e37"/>
+    <text x="305" y="260">Guardrails y permisos</text>
+    <rect x="395" y="236" width="160" height="40" rx="8" fill="#15191f" stroke="#292e37"/>
+    <text x="475" y="260">Evals y observabilidad</text>
+  </g>
+
+  <rect x="300" y="148" width="180" height="64" rx="10" fill="#e889bb" fill-opacity="0.12" stroke="#e889bb"/>
+  <g text-anchor="middle">
+    <text x="390" y="176" font-size="17" font-weight="700" fill="#e889bb">LLM</text>
+    <text x="390" y="198" font-size="11" fill="#c9c9c5">razonamiento y generación</text>
+  </g>
+
+  <line x1="572" y1="178" x2="604" y2="178" stroke="#c9ef78" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="608" y="126" width="152" height="104" rx="12" fill="#15191f" stroke="#e5b96e"/>
+  <g text-anchor="middle">
+    <text x="684" y="160" font-size="14" font-weight="600" fill="#e7e5df">Solución útil</text>
+    <text x="684" y="178" font-size="14" font-weight="600" fill="#e7e5df">y confiable</text>
+    <text x="684" y="202" font-size="12" fill="#858b94">que realmente</text>
+    <text x="684" y="218" font-size="12" fill="#858b94">le sirve a alguien</text>
+  </g>
+
+  <rect x="20" y="332" width="740" height="36" rx="10" fill="none" stroke="#858b94" stroke-opacity="0.6" stroke-dasharray="4 4"/>
+  <text x="390" y="355" text-anchor="middle" font-size="12" fill="#c9c9c5">Supervisión y criterio humano en todo el ciclo</text>
+</svg>
