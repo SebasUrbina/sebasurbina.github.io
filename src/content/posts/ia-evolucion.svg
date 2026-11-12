@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" font-family="Geist, ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="track" x1="0" x2="1">
+      <stop offset="0" stop-color="#292e37"/>
+      <stop offset="1" stop-color="#c9ef78"/>
+    </linearGradient>
+  </defs>
+  <line x1="60" y1="66" x2="660" y2="66" stroke="url(#track)" stroke-width="2"/>
+
+  <g text-anchor="middle">
+    <text x="90" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#73b9d5">2022</text>
+    <circle cx="90" cy="66" r="7" fill="#101318" stroke="#73b9d5" stroke-width="2"/>
+    <text x="90" y="104" font-size="15" font-weight="600" fill="#e7e5df">Experimentación</text>
+    <text x="90" y="128" font-size="12" fill="#858b94">Herramientas aisladas</text>
+    <text x="90" y="146" font-size="12" fill="#858b94">y generación de texto</text>
+
+    <text x="270" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#e5b96e">2023 – 2024</text>
+    <circle cx="270" cy="66" r="7" fill="#101318" stroke="#e5b96e" stroke-width="2"/>
+    <text x="270" y="104" font-size="15" font-weight="600" fill="#e7e5df">Asistencia</text>
+    <text x="270" y="128" font-size="12" fill="#858b94">Copilotos para código</text>
+    <text x="270" y="146" font-size="12" fill="#858b94">y resolución de problemas</text>
+
+    <text x="450" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#e889bb">2025</text>
+    <circle cx="450" cy="66" r="7" fill="#101318" stroke="#e889bb" stroke-width="2"/>
+    <text x="450" y="104" font-size="15" font-weight="600" fill="#e7e5df">Contexto y agentes</text>
+    <text x="450" y="128" font-size="12" fill="#858b94">Herramientas, memoria</text>
+    <text x="450" y="146" font-size="12" fill="#858b94">y orquestación</text>
+
+    <text x="630" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#c9ef78">2026</text>
+    <circle cx="630" cy="66" r="14" fill="#c9ef78" fill-opacity="0.15"/>
+    <circle cx="630" cy="66" r="7" fill="#c9ef78"/>
+    <text x="630" y="104" font-size="15" font-weight="600" fill="#c9ef78">Sistemas agénticos</text>
+    <text x="630" y="128" font-size="12" fill="#858b94">Harness, evaluación</text>
+    <text x="630" y="146" font-size="12" fill="#858b94">y ejecución</text>
+  </g>
+</svg>

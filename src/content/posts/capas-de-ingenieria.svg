@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="Geist, ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect x="20" y="16" width="680" height="268" rx="16" fill="#c9ef78" fill-opacity="0.04" stroke="#c9ef78" stroke-opacity="0.7"/>
+  <text x="44" y="48" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="1.5" fill="#c9ef78">HARNESS ENGINEERING</text>
+  <text x="44" y="70" font-size="13" fill="#858b94">Herramientas, restricciones, ejecución, memoria, evaluaciones y ciclos de feedback</text>
+
+  <rect x="60" y="94" width="600" height="170" rx="14" fill="#73b9d5" fill-opacity="0.05" stroke="#73b9d5" stroke-opacity="0.7"/>
+  <text x="84" y="126" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="1.5" fill="#73b9d5">CONTEXT ENGINEERING</text>
+  <text x="84" y="148" font-size="13" fill="#858b94">Qué información recibe el modelo y cómo se selecciona y estructura</text>
+
+  <rect x="100" y="172" width="520" height="72" rx="12" fill="#e889bb" fill-opacity="0.08" stroke="#e889bb" stroke-opacity="0.8"/>
+  <text x="124" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="1.5" fill="#e889bb">PROMPT ENGINEERING</text>
+  <text x="124" y="224" font-size="13" fill="#e7e5df">La instrucción: qué le pedimos al modelo</text>
+</svg>
